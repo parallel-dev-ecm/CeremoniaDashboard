@@ -11,7 +11,7 @@ function Dashboard({}: Props) {
 
   return (
     <>
-      <Slider docId="slider-controls" collectionField = 'travis_scale' />
+      <Slider collectionField="travis_scale" />
     </>
   );
 }
