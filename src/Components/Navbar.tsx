@@ -12,33 +12,37 @@ type Props = {};
 function Navbar({}: Props) {
   return (
     <>
-      {/** Logotipo */}
-      <div className="text-center p-8">
+      <div className="px-1 mt-1">
         <Link to={"/"}>
-          <h1 className="uppercase font-bold  tracking-[4 px]">
-            Parallel Room.
-          </h1>
+          <img className="w-[500] h-[500]" src="logo.png" alt="" />
         </Link>
-      </div>
+        <br />
+        <br />
+        <div className="flex flex-col h-[500px] rounded-lg">
+          {" "}
+          <nav>
+            <ul>
+              <li>
+                <NavBarItem path="About" text="About" Logo={RiDashboardLine} />
+              </li>
 
-      <div className="flex flex-col h-[500px] rounded-lg">
-        {" "}
-        <nav>
-          <ul>
-            <li>
-              <NavBarItem path="About" text="About" Logo={RiDashboardLine} />
-            </li>
-
-            <li>
-              <NavBarItem
-                path="https://github.com/parallel-dev-ecm"
-                text="Credits"
-                Logo={RiExternalLinkFill}
-              />
-            </li>
-          </ul>
-        </nav>
+              <li>
+                <NavBarItem
+                  path="https://github.com/parallel-dev-ecm"
+                  text="Credits"
+                  Logo={RiExternalLinkFill}
+                />
+              </li>
+              <li>
+                <br />
+                <a data-8code="kj7fp" data-hide-text></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
+      {/** Logotipo */}
+
       {/* Menu */}
     </>
   );
