@@ -11,8 +11,12 @@ function Slider(props: Props) {
   const [sliderValue, setSliderValue] = useState(0);
 
   const submitButton = useRef<HTMLButtonElement>(null);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     setSliderValue(parseInt(event.target.value));
+    const dataToUpload = { [props.collectionField]: sliderValue };
+
+    await FIREBASE_OBJECTS.updateData(dataToUpload, "slider-controls");
+    console.log(dataToUpload);
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -56,19 +60,6 @@ function Slider(props: Props) {
             onChange={handleChange}
           />
           <br />
-          <button
-            type="submit"
-            ref={submitButton}
-            className="bg-black text-white font-bold py-1 px-3 rounded "
-            onMouseEnter={() => {
-              gsap.to(submitButton.current, { scale: 1.1 });
-            }}
-            onMouseLeave={() => {
-              gsap.to(submitButton.current, { scale: 1 });
-            }}
-          >
-            Update
-          </button>
         </div>
       </form>
     </div>
