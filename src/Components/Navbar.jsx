@@ -3,11 +3,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Company", href: "#" },
-];
+const navigation = [{ name: "Company", href: "#" }];
 
 function CenteredNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,7 +15,7 @@ function CenteredNav() {
         aria-label="Global"
       >
         <div className="flex flex-1">
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-12 p-3">
             {navigation.map((item) => (
               <a
                 key={item.name}

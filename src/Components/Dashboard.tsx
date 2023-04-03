@@ -19,14 +19,9 @@ function Dashboard({}: Props) {
       <div className="dashBoard">
         <div className=" min-h-screen ">
           <div className="firstSliderRow container md:flex  mx-auto px-4  sm:px-6 lg:px-8  ">
-            <Slider collectionField="value" />
-            <Slider collectionField="test1" />
-            <Slider collectionField="test2" />
-
-            <div className="sliderDiv  border-r"></div>
-            <Slider collectionField="test1" />
-            <Slider collectionField="value" />
-            <Slider collectionField="test2" />
+            <Slider collectionField="Type" />
+            <Slider collectionField="Scale" />
+            <Slider collectionField="Tempo" />
           </div>
           <br />
           <br />
