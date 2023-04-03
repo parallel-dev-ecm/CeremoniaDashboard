@@ -34,7 +34,7 @@ function Dashboard({}: Props) {
           <br />
           <br />
           <div className="toggleContainer border  p-6  container mx-auto w-2/4 ">
-            <ToggleField collectionField="shader-type" />
+            <ToggleField collectionField="shaderType" />
             <br />
           </div>
         </div>
