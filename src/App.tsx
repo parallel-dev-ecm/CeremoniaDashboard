@@ -2,16 +2,26 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Components/About";
 import Dashboard from "./Components/Dashboard";
-import Navbar from "./Components/Navbar";
+import { CenteredNav } from "./Components/Navbar";
+import gsap from "gsap";
 
-import CenteredNav from "./Components/Navbar.jsx";
+import { useEffect, useRef } from "react";
 
 function App() {
+  const navBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      navBarRef.current,
+      { y: -1000 },
+      { y: 1, delay: 0.1, duration: 2 }
+    );
+  });
   return (
     <>
       <BrowserRouter>
         {/* Sidebar */}
-        <CenteredNav />
+        <CenteredNav ref={navBarRef} />
         {/* Content */}
         <Routes>
           <Route path="/" element={<Dashboard />} />

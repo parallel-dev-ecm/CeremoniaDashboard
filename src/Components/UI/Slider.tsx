@@ -9,8 +9,9 @@ type Props = {
 
 function Slider(props: Props) {
   const [sliderValue, setSliderValue] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
-  const submitButton = useRef<HTMLButtonElement>(null);
+
   const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     setSliderValue(parseInt(event.target.value));
     const dataToUpload = { [props.collectionField]: sliderValue };
@@ -41,7 +42,7 @@ function Slider(props: Props) {
   }, [props.collectionField]);
 
   return (
-    <div className="max-w-xs mx-auto">
+    <div className="max-w-xs mx-auto" ref={sliderRef}>
       <form onSubmit={handleSubmit}>
         <div className="py-4   rounded  px-4" id="sliderId">
           <label htmlFor="value" className="block text-black text-sm font-bold">
